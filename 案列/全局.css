@@ -81,7 +81,8 @@ body {
 }
 
 :focus {
-    outline: 1;
+    outline: white;
+
 }
 
 article,
@@ -126,7 +127,9 @@ a {
     background: transparent;
     text-decoration: none;
 }
-
+li {
+    list-style: none;
+}
 ins {
     background-color: #ff9;
     color: #000;
@@ -181,7 +184,7 @@ html,
 body {
     height: 100%;
     width: 100%;
-    font-family: '微软雅黑';
+    font-family: '微软雅黑', serif;
     overflow: hidden;
 }
 

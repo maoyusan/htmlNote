@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="http://xianyu.ml/qj.css ">
+    <style>
+        input[type=text] {
+            color: gray;
+            border: 1px solid red;
+        }
+        
+        input[type*=text] {
+            color: blue;
+        }
+        
+        div::before {
+            content: "  233";
+        }
+        
+        ul li:nth-child(1) {
+            color: blue;
+        }
+        
+        ul li:last-child {
+            counter-reset: pink;
+        }
+        
+        ul li:nth-child(-n+2) {
+            color: burlywood;
+        }
+        
+        ul li:nth-child(n+2) {
+            color: aqua;
+        }
+        
+        ul li:nth-of-type(5) {
+            color: antiquewhite;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text">666
+    <ul>
+        <li>666</li>
+        <li>666</li>
+        <li>666</li>
+        <li>666</li>
+        <li>666</li>
+    </ul>
+</body>
+
+</html>

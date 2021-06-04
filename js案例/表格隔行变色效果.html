@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>Document</title>
+
+    <style>
+        li {
+            margin-top: 20px;
+            width: 40px;
+            height: 20px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+</body>
+<script>
+	let li = document.querySelectorAll('li');
+
+	for (let i = 0; i < li.length; i++) {
+
+        li[i].onmouseover = function () {
+            this.style.backgroundColor = 'red';
+        };
+        li[i].onmouseout = function () {
+            this.style.backgroundColor=''
+        };
+	}
+
+</script>
+</html>

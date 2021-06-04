@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+            background-color: rgba(6, 6, 6, 0.1);
+        }
+
+        textarea {
+            width: 200px;
+            height: 200px;
+            border: 1px solid pink;
+        }
+
+        button {
+            width: 50px;
+            height: 20px;
+        }
+
+        ul a {
+            margin-right: 20px;
+            float: right;
+        }
+    </style>
+
+</head>
+<body>
+<div class="box">
+    <label>
+        <textarea></textarea>
+        <button>发布</button>
+    </label>
+
+    <ul>
+        <li></li>
+    </ul>
+</div>
+<script>
+    let textarea = document.querySelector('textarea');
+    let ul = document.querySelector('ul');
+    let button = document.querySelector('button');
+
+
+    button.onclick = function () {
+        if (textarea.value === '') {
+            alert("内容不能为空")
+        } else {
+            let li = document.createElement('li')
+            ul.insertBefore(li, ul.children[0]);
+            li.innerHTML = textarea.value + "<a href='javascript:;'>删除</a>";
+
+            let delete_a = document.querySelectorAll('ul a');
+
+            for (let i = 0; i < delete_a.length; i++) {
+                delete_a[i].onclick = function () {
+                    ul.removeChild(delete_a[i].parentNode);
+                };
+
+            }
+
+        }
+    };
+</script>
+</body>
+</html>

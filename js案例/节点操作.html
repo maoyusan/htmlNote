@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<ul>
+    <li class="1">1</li>
+    <li>2</li>
+    <li>3</li>
+    <li class="4">4 </li>
+</ul>
+
+<div class="box">
+    <div class="edema"></div>
+</div>
+</body>
+<script>
+    let edema = document.querySelector('.edema');
+   console.log(edema.parentNode)
+    let ur = document.querySelector("ul");
+    console.log(ur.children)
+
+    console.log(ur.children[0]);
+    console.log(ur.children[ur.children.length-1])
+</script>
+</html>

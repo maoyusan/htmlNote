@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+
+</head>
+<body>
+<label>
+    <input type="checkbox" index="2"  class="ipt1">
+    <input type="checkbox" class="ipt" >
+    <input type="checkbox" class="ipt" >
+    <input type="checkbox" class="ipt" >
+    <input type="checkbox" class="ipt" >
+    <input type="checkbox" class="ipt" >
+</label>
+</body>
+
+<script>
+    let ipt = document.querySelectorAll('label input:nth-of-type(n+2)');
+    let input = document.querySelector('label input:nth-of-type(1)')
+
+    console.log(input.getAttribute('index'));
+    input.removeAttribute('index')
+
+    input.onclick = function () {
+        console.log(this.checked);
+        for (let i = 0; i < ipt.length; i++) {
+            ipt[i].checked = this.checked;
+        }
+    }
+    for (let i = 0; i < ipt.length; i++) {
+        ipt[i].onclick = function () {
+            let flag=true
+            for (let j = 0; j <ipt.length ; j++) {
+                if (!ipt[j].checked) {
+                    input.checked = false;
+                    break;
+                }
+                input.checked = true;
+            }
+        };
+    }
+
+
+</script>
+</html>

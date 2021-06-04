@@ -31,7 +31,7 @@
             height: 20px;
             position: absolute;
             top: 50%;
-            margin-top: -15px;
+            margin-top: 15px;
             background-color: rgba(0, 0, 0, 0.3);
             text-decoration: none;
             text-align: center;
@@ -77,7 +77,7 @@
 </head>
 
 <body>
-    <div class="tb-promo"><img src="/img.jpg" alt="">
+    <div class="tb-promo"><img src="" alt="">
 
         <div class="prev">&lt;</div>
         <div class="next">&gt;</div>
@@ -88,11 +88,22 @@
             <li></li>
             <li></li>
             <li></li>
-
         </ul>
-
     </div>
 
 </body>
+<script>
+    let tb_promo = document.querySelector('.tb-promo img');
 
+
+    tb_promo.onmouseover = function () {
+        tb_promo.src="123.jpg"
+    };
+
+    tb_promo.onmouseleave = function () {
+        tb_promo.src=""
+        this.style.backgroundColor='blue'
+    };
+
+</script>
 </html>

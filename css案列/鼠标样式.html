@@ -14,6 +14,21 @@
     <li style="cursor: move;">233333</li>
     <li style="cursor: text;">233333</li>
     <li style="cursor: default;">233333</li>
+    <input type="text" placeholder="233">
+
+    <script>
+        let input = document.querySelector('input');
+        input.onfocus = function () {
+
+            if (input.placeholder==='233') {
+                this.placeholder = '';
+            }
+        };
+        input.onblur = function () {
+          this.placeholder='233'
+        };
+
+    </script>
 </body>
 
 </html>

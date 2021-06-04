@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="全局.css">
+    <style>
+
+        ul {
+            width: 400px;
+            height: 200px;
+            background-color: pink;
+            margin: 120px auto;
+        }
+       ul li {
+           width: 80px;
+           height: 20px;
+           float: left;
+
+           background-color: #EEF1EE;
+       }
+       div {
+           display: none;
+           width: 400px;
+           height: 180px;
+           background-color: gray;
+       }
+    </style>
+</head>
+<body>
+<ul>
+    <li>随机文字1</li>
+    <li>随机文字2</li>
+    <li>随机文字3</li>
+    <li>随机文字4</li>
+    <li>随机文字5</li>
+    <div>随机内容1</div>
+    <div>随机内容2</div>
+    <div>随机内容3</div>
+    <div>随机内容4</div>
+    <div>随机内容5</div>
+</ul>
+
+<script>
+    let li = document.querySelectorAll('li');
+    let div = document.querySelectorAll('div');
+    for (let i = 0; i < div.length; i++) {
+         div[i].setAttribute('data-index', '' + i + '');
+    }
+    console.log(div[1].dataset.index);
+    for (let i = 0; i < li.length; i++) {
+        li[i].onmouseover = function () {
+
+            for (let j = 0; j < li.length; j++) {
+                li[j].style.backgroundColor = "#EEF1EE";
+                div[j].style.display =' none';
+            }
+            this.style.backgroundColor = 'red';
+            let index = div[i].getAttribute('data-index');
+            div[index].style.display = 'block';
+        };
+
+
+    }
+
+
+</script>
+</body>
+</html>

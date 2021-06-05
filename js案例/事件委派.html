@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="Global.css">
+</head>
+<body>
+<ul>
+    <li>随机文字233</li>
+    <li>随机文字233</li>
+    <li>随机文字233</li>
+    <li>随机文字233</li>
+</ul>
+</body>
+<script>
+    let li = document.querySelectorAll('li');
+    let ul = document.querySelector('ul');
+    ul.addEventListener('click', function (e) {
+        alert("都给我弹");
+        for (let i = 0; i < li.length; i++) {
+            li[i].style.backgroundColor = 'white';
+        }
+        e.target.style.backgroundColor = 'pink'
+    });
+</script>
+</html>

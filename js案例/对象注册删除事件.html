@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="Global.css">
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+
+</head>
+<body>
+<button>按钮0</button>
+<div>
+    <button>按钮1</button>
+</div>
+<button>按钮2</button>
+<a href="https://.baidu.com">a</a>
+</body>
+<script>
+
+    let button = document.querySelectorAll('button');
+    let a = document.querySelector('a');
+    let div = document.querySelector('div');
+    a.addEventListener('click', function (e) {
+        /*阻止默认事件*/
+        e.preventDefault();
+    });
+
+    function f(e) {
+        alert("hello");
+        /* 阻止冒泡传播*/
+        e.stopPropagation();
+        alert("how are you");
+        console.log(e)
+    }
+
+    function f1(e) {
+        alert("hello");
+        alert("how are you");
+        console.log(e)
+        /*不再弹出相同监听事件*/
+        button[2].removeEventListener('click', f1);
+
+    }
+
+    /* 传统注册事件，每次注册事件都会覆盖更新*/
+    button[0].onclick = function (e) {
+        alert('hello');
+        /*哪个触发了事件指向了哪个*/
+        console.log(e.target);
+        /*this指绑定事件的本身*/
+        console.log(this);
+        /*返回触发了什么事件*/
+        console.log(e.type)
+        /*阻止了默认事件行为*/
+        button[1].onclick = null;
+    };
+    /*可重复注册监听事件，高级方式*/
+    button[1].addEventListener('click', f);
+    button[2].addEventListener('click', f1);
+    div.addEventListener('click', function () {
+        alert("你好");
+        console.log('触发了吗？')
+    });
+</script>
+
+</html>

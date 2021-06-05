@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="Global.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"/>
+    <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js"></script>
+</head>
+<body>
+
+</body>
+<script>
+    document.addEventListener('click', function (e) {
+        /*相对可视化窗口鼠标点击的坐标位置*/
+        console.log(e.clientX);
+        console.log(e.clientY);
+        /*相对整个dom文档的坐标位置*/
+        console.log(e.pageX);
+        console.log(e.pageY);
+        /*相对电脑的坐标位置*/
+        console.log(e.screenX);
+        console.log(e.screenY);
+    });
+
+</script>
+</html>

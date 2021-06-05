@@ -6,9 +6,10 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="Global.css">
     <style>
         table {
-            border-collapse: collapse;
+
             margin: 20px auto;
         }
 
@@ -31,6 +32,9 @@
         <th>姓名</th>
         <th>专业</th>
         <th>分数</th>
+        <th>操作</th>
+
+
     </tr>
     </thead>
     <tbody>
@@ -53,5 +57,22 @@
         object: "javascript",
         score: "77"
     },]
+    let tbody = document.querySelector('tbody')
+    /*创建行*/
+    for (let i = 0; i < dates.length; i++) {
+
+        let tr = document.createElement('tr');
+        tbody.appendChild(tr);
+        /*遍历元素，加入单元格里面*/
+        for (const x in dates[i]) {
+            let td = document.createElement('td');
+            td.innerHTML = dates[i][x];
+            tr.appendChild(td);
+        }
+        /*创建删除元素*/
+        let de = document.createElement('td')
+        de.innerHTML = '<a href="javascript:;">删除</a>'
+        tr.appendChild(de);
+    }
 </script>
 </html>

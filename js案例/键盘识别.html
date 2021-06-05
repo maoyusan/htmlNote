@@ -8,61 +8,63 @@
     <title>Document</title>
     <link rel="stylesheet" href="Global.css">
     <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            window.onload = function () {
+                let left = false;
+                let right = false;
+                let top1 = false;
+                let bottom = false;
+                let div = document.querySelector('div');
+                setInterval(function () {
+                    if (left) {
+                        div.style.left = div.offsetLeft - 10 + "px";
+                    } else if (top1) {
+                        div.style.top = div.offsetTop - 10 + "px";
+                    } else if (right) {
+                        div.style.left = div.offsetLeft + 10 + "px";
+                    } else if (bottom) {
+                        div.style.top = div.offsetTop + 10 + "px";
+                    }
+                }, 20)
+                document.addEventListener('keydown', function (e) {
+                    let x = e.key;
+                    console.log(x);
+                    switch (x) {
+                        case "ArrowLeft":
+                            left = true;
+                            break;
+                        case "ArrowRight":
+                            right = true;
+                            break;
+                        case "ArrowUp":
+                            top1 = true;
+                            break;
+                        case "ArrowDown":
+                            bottom = true;
+                            break;
+                    }
+                });
+                document.addEventListener('keyup', function (e) {
+                    let keyCode = e.key
+                    switch (keyCode) {
+                        case "ArrowLeft":
+                            left = false;
+                            break;
+                        case "ArrowUp":
+                            top1 = false;
+                            break;
+                        case "ArrowRight":
+                            right = false;
+                            break;
+                        case "ArrowDown":
+                            bottom = false;
+                            break;
+                    }
 
-        window.onload = function () {
-            let left = false;
-            let right = false;
-            let top1 = false;
-            let bottom = false;
-            let div = document.querySelector('div');
-            setInterval(function () {
-                if (left) {
-                    div.style.left = div.offsetLeft - 10 + "px";
-                } else if (top1) {
-                    div.style.top = div.offsetTop - 10 + "px";
-                } else if (right) {
-                    div.style.left = div.offsetLeft + 10 + "px";
-                } else if (bottom) {
-                    div.style.top = div.offsetTop + 10 + "px";
-                }
-            }, 20)
-            document.addEventListener('keydown', function (e) {
-                let x = e.key;
-                console.log(x);
-                switch (x) {
-                    case "ArrowLeft":
-                        left = true;
-                        break;
-                    case "ArrowRight":
-                        right = true;
-                        break;
-                    case "ArrowUp":
-                        top1 = true;
-                        break;
-                    case "ArrowDown":
-                        bottom = true;
-                        break;
-                }
-            });
-            document.addEventListener('keyup', function (e) {
-                let keyCode = e.key
-                switch (keyCode) {
-                    case "ArrowLeft":
-                        left = false;
-                        break;
-                    case "ArrowUp":
-                        top1 = false;
-                        break;
-                    case "ArrowRight":
-                        right = false;
-                        break;
-                    case "ArrowDown":
-                        bottom = false;
-                        break;
-                }
+                })
+            };
+        });
 
-            })
-        };
     </script>
     <style>
         div {
@@ -75,6 +77,7 @@
     </style>
 </head>
 <body>
+
 <div></div>
 </body>
 </html>

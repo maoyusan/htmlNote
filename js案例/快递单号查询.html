@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="Global.css">
+
+    <style>
+        .box {
+            visibility: hidden;
+            position: relative;
+            width: 200px;
+            height: 20px;
+            background-color: #FCFFFC;
+            margin: 120px auto;
+            box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.1);
+        }
+
+
+        input {
+            display: block;
+            font-size: 10px;
+            margin: -100px auto;
+        }
+
+        .box div {
+            font-size: 20px;
+            position: absolute;
+            top: 18px;
+            left: 20px;
+            border: 12px solid transparent;
+            border-top-color: #FCFFFC;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div></div>
+</div>
+
+<label>
+    <input type="text">
+</label>
+</body>
+<script>
+    let input = document.querySelector('input');
+    let box = document.querySelector('.box');
+    input.onkeyup = function (s) {
+        if (this.value === '') {
+            box.style.visibility = 'hidden';
+        } else {
+            box.style.visibility = 'visible';
+            box.innerText = input.value;
+        }
+    };
+
+    input.onblur = function (e) {
+        box.style.visibility = "hidden";
+    }
+    input.onfocus = function (e) {
+        if (this.value !== "") {
+            box.style.visibility = "visible";
+        }
+    };
+
+</script>
+</html>

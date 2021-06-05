@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="Global.css">
+</head>
+<body>
+<button>点击跳转</button>
+</body>
+<script>
+    let time = 5;
+    let button = document.querySelector('button');
+    button.addEventListener('click', function () {
+        setInterval(function () {
+            if (time < 0) {
+                location.href = 'https://www.baidu.com'
+            } else {
+                button.innerHTML = "还有" + time + "秒钟后跳转";
+                time--;
+            }
+        }, 1000);
+    });
+</script>
+</html>

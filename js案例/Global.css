@@ -191,11 +191,6 @@ body {
     overflow: hidden;
 }
 
-input,
-textarea {
-    border: none;
-}
-
 .clearfix:before,
 .clearfix:after {
     content: "";

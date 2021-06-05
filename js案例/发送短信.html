@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="Global.css">
+    <style>
+
+    </style>
+</head>
+<body>
+
+<label>
+    <input type="text">
+    <button>发送</button>
+</label>
+
+
+</body>
+<script>
+    let button = document.querySelector('button');
+    let time = 3;
+
+
+    button.onclick = function () {
+        button.disabled = true;
+        let timer = setInterval(function () {
+
+
+            if (time === 0) {
+                button.disabled = false;
+                button.innerHTML = '发送';
+                clearInterval(timer);
+            } else {
+                button.innerHTML = '还剩' + time + '秒';
+                time--;
+
+            }
+
+        }, 1000);
+
+    };
+</script>
+</html>

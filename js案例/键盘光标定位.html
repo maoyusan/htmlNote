@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="Global.css">
+
+</head>
+<body>
+<label>
+    <input type="text">
+</label>
+</body>
+<script>
+    let input = document.querySelector('input');
+    document.onkeyup = function (e) {
+        if (e.key === "s") {
+            input.focus();
+        }
+    };
+</script>
+
+</html>

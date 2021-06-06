@@ -11,13 +11,13 @@
         .box {
             position: relative;
             width: 400px;
-            height: 400px;
+            height: 800px;
             overflow: hidden;
         }
 
         .box img {
             width: 400px;
-            height: 400px;
+            height: 800px;
 
         }
 
@@ -34,7 +34,7 @@
 
         .big {
             position: relative;
-            display: none;
+            display: inline-block;
             top: 1px;
             left: 200px;
             width: 800px;
@@ -46,8 +46,8 @@
 
         .big img {
             position: absolute;
-            width: 400px;
-            height: 400px;
+            width: 1200px;
+            height: 2400px;
             z-index: 99;
             opacity: 0.5;
         }
@@ -65,6 +65,7 @@
     let box1 = document.querySelector('.box');
     let mask = document.querySelector('.mask');
     let big = document.querySelector('.big');
+    let bigImg = document.querySelector('.bigImg');
     box1.addEventListener('mouseover', function () {
         mask.style.display = 'block';
         big.style.display = 'block';
@@ -78,8 +79,8 @@
         /*鼠标坐标减去盒子的偏移量，求出鼠标在盒子里的坐标*/
         let x = e.pageX - box1.offsetLeft;
         let y = e.pageY - box1.offsetTop;
-        let maskX = x - mask.offsetWidth / 2 + 'px';
-        let maskY = y - mask.offsetTop / 2 + 'px';
+        let maskX = x - mask.offsetWidth / 2
+        let maskY = y - mask.offsetTop / 2
         /*盒子里鼠标的坐标减去遮罩盒子的宽高一半就能在遮罩正中间*/
         let maskMax = box1.offsetWidth - mask.offsetWidth;
         if (maskX <= 0) {
@@ -92,17 +93,18 @@
         } else if (maskY >= maskMax) {
             maskY = maskMax
         }
-        mask.style.left = maskX;
-        mask.style.top = maskY;
+        mask.style.left = maskX + 'px';
+        mask.style.top = maskY + 'px';
 
-        let bigImg = document.querySelector('.bigImg');
 
         let bigMax = bigImg.offsetWidth - big.offsetWidth;
 
         let bigX = maskX * bigMax / maskMax
         let bigY = maskY * bigMax / maskMax
-        bigImg.style.left = 100 + 'px'
-        bigImg.style.top = 100 + 'px'
+
+
+        bigImg.style.left = -bigX + 'px'
+        bigImg.style.top = -bigY + 'px'
     });
 
 </script>

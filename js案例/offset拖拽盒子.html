@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="Global.css">
+    <style>
+        .faster {
+            position: absolute;
+            top: 1px;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+
+        }
+    </style>
+</head>
+<body>
+<div class="faster">
+
+</div>
+
+</body>
+<script>
+    let son = document.querySelector('.son');
+    let father = document.querySelector('.faster');
+
+    /*求出鼠标在盒子内的坐标位置*/
+    father.addEventListener('mousedown', function (e) {
+        let x = e.pageX - father.offsetLeft;
+        console.log(x);
+        let y = e.pageY - father.offsetTop;
+
+        document.addEventListener('mousemove', move);
+
+        function move(e) {
+            father.style.left = e.pageX - x + 'px';
+            father.style.top = e.pageY - y + 'px';
+        }
+
+        document.addEventListener('mouseup', function () {
+            document.removeEventListener('mousemove', move);
+
+        });
+    });
+
+    /* /!*获取水平偏移*!/
+     console.log(father.offsetLeft);
+     console.log(father.offsetTop);
+     /!*获取盒子宽高*!/
+     console.log(father.offsetWidth);
+     console.log(father.offsetHeight);
+     /!*获取父级元素 其中一个找带浮动的父级元素*!/
+     console.log(son.offsetParent);
+     console.log(son.parentNode);*/
+
+
+</script>
+</html>

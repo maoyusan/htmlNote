@@ -10,6 +10,7 @@
   <style>
       div {
           position: absolute;
+
           width: 50px;
           height: 50px;
           background-color: pink;
@@ -18,23 +19,31 @@
 </head>
 <body>
 <div></div>
-<button></button>
+
 </body>
 <script>
   let div = document.querySelector('div');
   let btn = document.querySelector('.btn')
 
-  function animated(obj, target) {
+  function animated(obj, target, callback) {
     /*一次只执行一次*/
+    console.log(callback)
     clearInterval(obj.timer);
     obj.timer = setInterval(function () {
-      if (obj.offsetLeft > target) {
+      let step = (target - obj.offsetLeft) / 10;
+      step = step > 0 ? Math.ceil(step) : Math.floor(step);
+      if (obj.offsetLeft === target) {
         clearInterval(obj.timer);
+
+        callback();
+
       }
-      obj.style.left = obj.offsetLeft + 10 + 'px';
+      obj.style.left = obj.offsetLeft + step + 'px';
     }, 30);
   }
 
-  animated(div, 400)
+  animated(div, 400, function () {
+    alert("hello")
+  });
 </script>
 </html>

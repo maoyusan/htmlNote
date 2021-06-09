@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function () {
   let input = +new Date('2021-6-9 0:10:50');
 
   function countDown() {
-
     let now = +new Date();
     let times = parseInt((input - now) / 1000 + '');
     let d = parseInt(times / 60 / 60 / 24 + '');
@@ -31,8 +30,3 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 });
-
-
-
-
-

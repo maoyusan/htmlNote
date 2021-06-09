@@ -42,6 +42,7 @@
             margin-left: 200px;
             background-color: pink;
             opacity: 0.5;
+
         }
 
         .big img {
@@ -90,8 +91,8 @@
         }
         if (maskY <= 0) {
             maskY = 0;
-        } else if (maskY >= maskMax) {
-            maskY = maskMax
+        } else if (maskY >= maskMax * 4) {
+            maskY = maskMax * 4
         }
         mask.style.left = maskX + 'px';
         mask.style.top = maskY + 'px';

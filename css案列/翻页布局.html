@@ -2,80 +2,81 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0%;
-        }
-        
-        .box {
-            text-align: center;
-        }
-        
-        .box a {
-            display: inline-block;
-            width: 36px;
-            height: 36px;
-            text-decoration: none;
-            text-align: center;
-            line-height: 36px;
-            background-color: #f7f7f7;
-            color: #333;
-            border: 1px solid #ccc;
-        }
-        
-        .box .prev,
-        .box .next {
-            width: 88px;
-        }
-        
-        .box .current,
-        .box .elp {
-            background-color: white;
-            border: 0;
-        }
-        
-        .box input {
-            width: 44px;
-            outline: none;
-            color: #333;
-            border: 1px solid #ccc;
-        }
-        
-        .box button {
-            height: 36px;
-            width: 80px;
-            background-color: #f7f7f7;
-            color: #333;
-            border: 1px solid #ccc;
-        }
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+      * {
+          margin: 0;
+          padding: 0%;
+      }
 
-        .box :nth-child(1) {
-            color: pink;
-        }
-        .box a:nth-child(5) {
-            color:pink;
-        }
-    </style>
+      .turnPage {
+          text-align: center;
+      }
+
+      .turnPage a {
+          display: inline-block;
+          width: 36px;
+          height: 36px;
+          text-decoration: none;
+          text-align: center;
+          line-height: 36px;
+          background-color: #f7f7f7;
+          color: #333;
+          border: 1px solid #ccc;
+      }
+
+      .turnPage .prev,
+      .turnPage .next {
+          width: 88px;
+      }
+
+      .turnPage .current,
+      .turnPage .elp {
+          background-color: white;
+          border: 0;
+      }
+
+      .turnPage input {
+          width: 44px;
+          outline: none;
+          color: #333;
+          border: 1px solid #ccc;
+      }
+
+      .turnPage button {
+          height: 36px;
+          width: 80px;
+          background-color: #f7f7f7;
+          color: #333;
+          border: 1px solid #ccc;
+      }
+
+      .turnPage :nth-child(1) {
+          color: pink;
+      }
+
+      .turnPage a:nth-child(5) {
+          color: pink;
+      }
+  </style>
 </head>
 
 <body>
-    <div class="box">
-        <a href="#" class="prev">&lt;&lt;上一页</a>
-        <a href="#" class="current">2</a>
-        <a href="#">3</a>
-        <a href="#">4</a>
-        <a href="#">5</a>
-        <a href="#">6</a>
-        <a href="#" class="elp">...</a>
-        <a href="#" class="next">&gt;&gt;下一页</a>
-        <input type="text"> 页
-        <button>确定</button>
-    </div>
+<div class="turnPage">
+  <a href="#" class="prev">&lt;&lt;上一页</a>
+  <a href="#" class="current">2</a>
+  <a href="#">3</a>
+  <a href="#">4</a>
+  <a href="#">5</a>
+  <a href="#">6</a>
+  <a href="#" class="elp">...</a>
+  <a href="#" class="next">&gt;&gt;下一页</a>
+  <input type="text"> 页
+  <button>确定</button>
+</div>
 </body>
 
 </html>

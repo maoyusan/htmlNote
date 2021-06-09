@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="Global.css">
+  <style>
+      div {
+          position: absolute;
+          width: 50px;
+          height: 50px;
+          background-color: pink;
+      }
+  </style>
+</head>
+<body>
+<div></div>
+<button></button>
+</body>
+<script>
+  let div = document.querySelector('div');
+  let btn = document.querySelector('.btn')
+
+  function animated(obj, target) {
+    /*一次只执行一次*/
+    clearInterval(obj.timer);
+    obj.timer = setInterval(function () {
+      if (obj.offsetLeft > target) {
+        clearInterval(obj.timer);
+      }
+      obj.style.left = obj.offsetLeft + 10 + 'px';
+    }, 30);
+  }
+
+  animated(div, 400)
+</script>
+</html>
